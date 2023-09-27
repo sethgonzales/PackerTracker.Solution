@@ -21,9 +21,9 @@ namespace PackerTracker.Controllers
     }
 
     [HttpPost("/items")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string description, int weight)
     {
-      Item myItem = new Item(description);
+      Item myItem = new Item(description, weight);
       return RedirectToAction("Index");
     }
 

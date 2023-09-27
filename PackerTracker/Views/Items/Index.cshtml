@@ -20,9 +20,21 @@
     <ul>
       @foreach (Item item in Model)
       {
-        <li><a href='/items/@item.Id'>@item.Description</a></li>
+        <li><a href='/items/@item.Id'>@item.Description</a>
+        <p>@item.Weight</p></li>
       }
     </ul>
+
+  @* @{
+        int totWeight = 0;
+        foreach (Item item in Model)
+        {
+            totWeight += item.Weight;
+        }
+    } *@
+    
+    <h3>@totWeight</h3>
+    <h4>is the weight of your pack, eat some protein</h4>
 
     <a href="/items/new">Add a new item.</a>
 
